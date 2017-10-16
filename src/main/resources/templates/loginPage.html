@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+</head>
+<body>
+<center>
+    <h1><span style="font: red"; th:text="${error}"/></h1>
+
+    <br/>
+    <div style="background-color: green; font-size: 30px;">
+    <form th:action="@{/}" method="post">
+        Login: <input type="text" th:name="login"><br/>
+        Hasło: <input type="password" th:name="password"><br/>
+        Twój nick: <input type="text" th:name="nickname"><br/>
+        <input type="submit" value="Zaloguj"/>
+    </form>
+    </div>
+</center>
+</body>
+</html>

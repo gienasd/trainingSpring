@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+</head>
+<body>
+<center>
+    <div th:if="${infoCredit} != null" th:style="'background color: ' + ${infoCredit} ? 'green' : 'red'">
+        <h1 th:text="${infoCredit} ? 'Dostałeś kredyt!' : 'Nie ma kredytu :('"></h1>
+    </div>
+    <form th:if="${infoCredit} == null" th:action="@{/dashboard}" th:object="${formRequest}" method="post">
+        Dochód miesięczny: <input th:field="*{monthCash}" type="number"><br>
+        Zobowiązania miesięczne: <input th:field="*{minusCash}" type="number"><br>
+        Okres kredytowania: <input th:field="*{creditTime}" type="number"><br>
+        Kwota kredytu: <input th:field="*{creditCash}" type="number"><br>
+    <input type="submit" value="Wyślij">
+    </form>
+</center>
+</body>
+</html>
